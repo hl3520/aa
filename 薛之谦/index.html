@@ -1,0 +1,306 @@
+<!doctype  html>
+<html>
+<head>
+    <title>文字滚动  歌词字幕</title>
+
+
+    <style type="text/css">
+    #scroll_caption{
+    overflow-y: scroll;
+    width: 450px;
+    height: 550px;
+    background: #2B2B2B;
+    }
+#scroll_caption_list_box{
+margin: calc(50% - 30px) 0;
+}
+.caption_item_box{
+height: 40px;
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+color: #6A6A6A;
+}
+.caption_item_selected_box{
+color: white!important;
+}
+    </style>
+
+</head>
+
+<body>
+
+
+<div id="scroll_caption">
+
+<div id="scroll_caption_list_box">
+
+
+<div class="caption_item_box">
+作词 : 薛之谦
+</div>
+<div class="caption_item_box">
+作曲 : 薛之谦
+</div>
+<div class="caption_item_box">
+编曲 : 郑伟
+</div>
+<div class="caption_item_box">
+如果有人在灯塔
+</div>
+<div class="caption_item_box">
+拨弄她的头发
+</div>
+<div class="caption_item_box">
+思念刻在墙和瓦
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+如果感情会挣扎
+</div>
+<div class="caption_item_box">
+没有说的儒雅
+</div>
+<div class="caption_item_box">
+把挽回的手放下
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+镜子里的人说假话
+</div>
+<div class="caption_item_box">
+违心的样子你决定了吗
+</div>
+<div class="caption_item_box">
+装聋或者作哑 要不我先说话
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的爱情 到这刚刚好
+</div>
+<div class="caption_item_box">
+剩不多也不少 还能忘掉
+</div>
+<div class="caption_item_box">
+我应该可以 把自己照顾好
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的距离 到这刚刚好
+</div>
+<div class="caption_item_box">
+不够我们拥抱 就挽回不了
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+用力爱过的人 不该计较
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+是否要逼人弃了甲
+</div>
+<div class="caption_item_box">
+亮出一条伤疤
+</div>
+<div class="caption_item_box">
+不堪的根源在哪
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+可是感情会挣扎
+</div>
+<div class="caption_item_box">
+没有别的办法
+</div>
+<div class="caption_item_box">
+它劝你不如退下
+</div>
+<div class="caption_item_box">
+如果分手太复杂
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+流浪的歌手会放下吉他
+</div>
+<div class="caption_item_box">
+故事要美必须藏着真话
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的爱情 到这刚刚好
+</div>
+<div class="caption_item_box">
+剩不多也不少 还能忘掉
+</div>
+<div class="caption_item_box">
+我应该可以 把自己照顾好
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的距离 到这刚刚好
+</div>
+<div class="caption_item_box">
+不够我们拥抱 就挽回不了
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+用力爱过的人 不该计较
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的爱情到这刚刚好
+</div>
+<div class="caption_item_box">
+再不争也不吵 不必再煎熬
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+你可以不用 记得我的好
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+我们的流浪到这刚刚好
+</div>
+<div class="caption_item_box">
+趁我们还没到 天涯海角
+</div>
+<div class="caption_item_box">
+我也不是非要去那座城堡
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+天空有些暗了暗的刚刚好
+</div>
+<div class="caption_item_box">
+我难过的样子就没人看到
+</div>
+<div class="caption_item_box">
+你别太在意我身上的记号
+</div>
+<div class="caption_item_box"></div>
+<div class="caption_item_box">
+制作 : 薛之谦
+</div>
+<div class="caption_item_box">
+录音 : 郝宇
+</div>
+<div class="caption_item_box">
+混音 : 郑伟
+</div>
+<div class="caption_item_box">
+母带处理 : Ted Jensen
+</div>
+
+</div>
+
+</div>
+
+
+<script type="text/javascript">
+
+// 是否进行滚动
+let is_scroll_flag = true
+// 设置is_scroll_flag 为 true 的定时器
+let set_scroll_flag_Timeout;
+
+
+/**
+ * 目标元素 滚动指定位置
+ * @param targetElement 目标元素
+ * @param number 位置
+ * @param time   时间
+ */
+function ScrollTop(targetElement, number = 0, time){
+if (!time) {
+targetElement.scrollTop = number;
+return number;
+}
+const spacingTime = 3; // 设置循环的间隔时间  值越小消耗性能越高
+let spacingIndex = time / spacingTime; // 计算循环的次数
+let nowTop = targetElement.scrollTop; // 获取当前滚动条位置
+let everTop = (number - nowTop) / spacingIndex; // 计算每次滑动的距离
+let scrollTimer = setInterval(() => {
+if (spacingIndex > 0) {
+spacingIndex--;
+ScrollTop(targetElement, nowTop += everTop);
+} else {
+clearInterval(scrollTimer); // 清除计时器
+}
+}, spacingTime);
+};
+
+/**
+ * 滚动到指定index 和 样式变化
+ * @param caption_index 目标
+ * @param scroll_flag 是否滚动
+ */
+function to_target(caption_index, scroll_flag){
+
+var caption_item_box_height = document.querySelector(".caption_item_box").clientHeight;
+var scroll_caption_list = document.querySelectorAll(".caption_item_box");
+var target = scroll_caption_list[caption_index];
+var caption_item_selected_list = document.querySelectorAll(".caption_item_selected_box");
+
+for(var i = 0;i<caption_item_selected_list.length;i++){
+if (caption_item_selected_list[i] != target) {
+caption_item_selected_list[i].classList.remove("caption_item_selected_box")
+}
+}
+if (caption_index >= 0 && caption_index < scroll_caption_list.length){
+target.classList.add("caption_item_selected_box");
+}
+var top = caption_index * caption_item_box_height;
+if (scroll_flag != false) {
+ScrollTop(document.getElementById('scroll_caption'), top, 300);
+}
+
+}
+
+
+//暂停滚动 一会恢复
+function pause_scroll() {
+is_scroll_flag = false
+
+clearTimeout(set_scroll_flag_Timeout);
+set_scroll_flag_Timeout = setTimeout(function () {
+is_scroll_flag = true
+},2500);
+}
+
+//初始化 绑定事件
+function init_scroll_caption() {
+var scroll_caption = document.getElementById('scroll_caption')
+scroll_caption.onmousedown = function () {
+is_scroll_flag = false
+}
+scroll_caption.onmouseup = pause_scroll
+//鼠标滚轮 滚动事件
+scroll_caption.onwheel = pause_scroll
+
+}
+
+
+
+
+
+window.onload = function () {
+init_scroll_caption()
+document.querySelector(".caption_item_box").classList.add("caption_item_selected_box");
+
+let caption_index = 0;
+let scroll_caption_scrollTimer = setInterval(() => {
+
+to_target(caption_index, is_scroll_flag)
+caption_index = caption_index + 1;
+
+}, 1000);
+}
+
+
+</script>
+
+</body>
+</html>
+
+
